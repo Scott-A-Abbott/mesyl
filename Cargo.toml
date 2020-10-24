@@ -1,0 +1,25 @@
+[package]
+name = "mesyl"
+version = "0.1.0"
+authors = ["Mozar <scott.abbott.a@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[workspace]
+members = [
+    "crates/*",
+]
+
+[dependencies]
+#Mesyl
+mesyl_game = { path = "crates/mesyl_game", version = "0.1" }
+mesyl_renderer = { path = "crates/mesyl_renderer", version = "0.1" }
+
+#Other
+vek = { version = "0.12", features = ["rgb", "rgba", "uv", "uvw", "serde", "image"] }
+bevy_ecs = "0.1"
+
+[[example]]
+name = "basic"
+path = "examples/basic.rs"
